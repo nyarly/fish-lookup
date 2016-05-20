@@ -1,12 +1,12 @@
 function lookup --argument file
 	if [ (count $argv) -ne 1 ]
-    echo "Usage: $0 <file>"
+    echo "Usage: $_ <file>"
     return 1
   end
 
   pushd .
   while [ (pwd) != '/' ]
-    if [ -e $file ]
+    if [ -e "$file" ]
       pwd
       popd
       return 0
